@@ -1,7 +1,7 @@
 import { CapacitorConfig } from "@capacitor/cli";
 
 const config: CapacitorConfig = {
-  appId: "app.lovable.5e6cdc0ce6284cd6a98ba33bba023718",
+  appId: "app.lovable.intervalhabit",
   appName: "interval-habit",
   webDir: "dist",
   server: {
