@@ -7,7 +7,7 @@ const Index = () => {
   const canonical = typeof window !== "undefined" ? window.location.origin + window.location.pathname : "";
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-[100svh] bg-background overflow-x-hidden">
       <Helmet>
         <title>Tameno-style Interval Timer | Interval Habit</title>
         <meta name="description" content="A focused, repeating interval timer for habits like tooth-brushing or watering plants." />
