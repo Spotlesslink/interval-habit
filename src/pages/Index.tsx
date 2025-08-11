@@ -2,6 +2,8 @@ import { Helmet } from "react-helmet-async";
 import Timer from "@/components/Timer";
 import GoogleAuthButton from "@/components/GoogleAuthButton";
 import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 const Index = () => {
   const canonical = typeof window !== "undefined" ? window.location.origin + window.location.pathname : "";
@@ -19,11 +21,32 @@ const Index = () => {
       <header className="container py-10">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-semibold tracking-tight">Interval Habit</h1>
-          <div className="flex gap-3">
+
+          {/* Desktop actions */}
+          <div className="hidden md:flex gap-3">
             <GoogleAuthButton />
             <Button variant="link" asChild>
               <a href="#how-it-works">How it works</a>
             </Button>
+          </div>
+
+          {/* Mobile hamburger */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" aria-label="Open menu">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-64 z-50 bg-background">
+                <nav className="mt-6 flex flex-col gap-3">
+                  <GoogleAuthButton />
+                  <Button variant="link" asChild>
+                    <a href="#how-it-works">How it works</a>
+                  </Button>
+                </nav>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </header>
